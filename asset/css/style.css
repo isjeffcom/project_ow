@@ -3,6 +3,8 @@
     src: url(../fonts/bignoodletoo.ttf);
 }
 
+
+
 body{
   height:100%;
   width:100%;
@@ -182,7 +184,7 @@ a{
   position:absolute;
   width:1600px;
   right:0px;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .all_hero_container{
@@ -241,7 +243,7 @@ a{
 
 .hero_detail_container{
   display:none;
-  right: 480px;
+  left:400px;
   top: 157px;
   line-height: 90px;
   position: absolute;
@@ -254,6 +256,10 @@ a{
 
 .hero_detail_container a{
   font-size: 32px;
+}
+
+.hero_info_li{
+  cursor: default;
 }
 
 .hero_info_li>a:nth-child(2){
@@ -276,6 +282,7 @@ a{
 }
 
 .hct_container{
+  margin-right:100px;
   display:flex;
 }
 
@@ -294,4 +301,116 @@ a{
 .hct_single img{
   margin-top:-10px;
   width: 52px;
+}
+
+/*Detail page graphic chart*/
+canvas#comChart{
+  position:absolute;
+  top:-100px;
+  right:-220px;
+  z-index:-1;
+  opacity: 0.9;
+}
+
+canvas#radarChart{
+  position:absolute;
+  top: 200px;
+  right: 330px;
+  z-index:-1;
+  opacity: 0.9;
+}
+
+.overallMark_container a{
+  font-size:50px;
+}
+
+/*Responsive rebuild for mobile page. Screen type PAD*/
+@media screen and (max-width:1600px){
+
+}
+
+/*Responsive rebuild for mobile page. Screen level @x2*/
+@media screen and (max-width:1000px){
+
+  body{
+    background-image: url(../img/m_bg.jpg);
+    background-size: 320%;
+  }
+
+  .sidebar{
+    left: 0px;
+    bottom: 0px;
+    width:100%;
+    height: 160px;
+  }
+
+  .sidebar_container{
+    display:flex;
+  }
+
+  .sidebar_icon_home{
+    padding-left: 7%;
+    padding-top: 20px;
+  }
+
+  .sidebar_icon{
+    padding-left: 10%;
+    padding-top: 20px;
+  }
+
+  .logo{
+    left: 50px;
+    top: 50px;
+    right: initial;
+    bottom: initial;
+    opacity: 0.9;
+  }
+
+  .title{
+    right: -600px;
+  }
+
+  .home_title{
+    left:170px;
+  }
+
+  .top3{
+    display:block;
+    padding-bottom: 240px;
+  }
+
+  .top3_hero{
+    margin-bottom: 110px;
+    height: 350px;
+    width: 150px;
+  }
+
+  .top3_hero_img img{
+    width:250px;
+  }
+
+  .hero_profile{
+    padding-bottom: 240px;
+  }
+
+  .all_hero_container{
+    margin-bottom: 240px;
+  }
+
+  .hero_selector_container{
+    width:760px;
+
+  }
+
+  .hero_detail_container{
+    left: -180px;
+    top: 887px;
+    margin-bottom: 100px;
+  }
+
+  .single_hero_container{
+    left: -30px !important;
+    top: 50px;
+  }
+
 }

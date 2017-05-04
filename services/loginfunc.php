@@ -16,11 +16,11 @@
  session_start();
 
 
-	//If user click submit button and content is "登陆" 如果用户点击了提交按钮，且内容为"登陆"
+	//If user click submit button and content is 'submit'
     if(isset($_POST["submit"]) && $_POST["submit"] == "go"){
   		$user = $_POST["username"];
   		$psw = $_POST["password"];
-  		//Security Check important 安全检查用户是否输入正确的内容，防止用户输入数据库语句
+  		//Security Check important
   		if (!preg_match("/^[a-zA-Z0-9]*$/",$_POST["username"])){
   			echo "<script>alert('Username Unvaild'); history.go(-1)</script>";
   			exit();
@@ -51,7 +51,7 @@
   						$sqlid = "SELECT id, usertype FROM user WHERE username = '$row[0]'";
   						$useridrun = mysqli_query($link, $sqlid);
   						$useridt = mysqli_fetch_array($useridrun);
-  						//在SESSION中写入用户名，用户ID，用户类型，真实姓名和商店ID
+  						//write username id and type to SESSION
   						$_SESSION['username'] = $row[0];
   						$_SESSION['userid'] = $useridt[0];
   						$_SESSION['usertype'] = $useridt[1];

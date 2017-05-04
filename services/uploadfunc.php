@@ -2,7 +2,7 @@
 
 <?php
 
-			//If triger the uplaad 如果触发上传情况
+			//If triger the uplaad
 			if($_FILES["fileToUpload"]["name"] != null){
 				$time = time();
 				$target_dir = "../upload/img/";
@@ -12,14 +12,14 @@
 				$upAddress = $target_dir.$fileName;
 				$uploadOk = 1;
 				$imageFileType = pathinfo($upAddress,PATHINFO_EXTENSION);
-				//File checker 文件类型检查器
-							//Check image file type 检查文件格式
+				//File type checker
+							//Check image file type
 							if($imageFileType != "jpg" && $imageFileType != "JPG" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
 							    echo "<script>alert('Only support JPG/JPEG/PNG/GIF');history.go(-1);</script>";
 									exit();
 							    $uploadOk = 0;
 							}
-							// Check image is image 检查图片是图片
+							// Check image is image
 							$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 							   	if($check !== false) {
 							        //echo "File is an image - " . $check["mime"] . ".";
@@ -28,7 +28,7 @@
 							        echo "<script>alert('This is not a image');history.go(-1);</script>";
 							        $uploadOk = 0;
 							}
-							// Check file size 检查文件大小
+							// Check file size
 							if ($_FILES["fileToUpload"]["size"] > 4000000) {
 							    echo "<script>alert('Your image is oversize (max 4M)');history.go(-1);</script>";
 							    $uploadOk = 0;
@@ -44,9 +44,9 @@
 					exit();
 				}else{
 					    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $upAddress)){
-                  //For Debug only 仅用于打印调试
+                  //For Debug only
 					        //echo "The file ". basename( $_FILES["fileToUpload".$i.""]["name"]). " has been uploaded.";
-									//var tf = Output URL. Multiple File Use ';' for Separate 输出地址，一个则为一个地址，多个为多个地址用分号隔开
+									//var tf = Output URL. Multiple File Use ';' for Separate
 									if(isset($tf)){
 										$tf = $tf.";".$fake_dir.$fileName;
 									}else{

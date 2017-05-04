@@ -1,5 +1,5 @@
 <head>
-  <title>Test Title</title>
+  <title>OverMark - SERCURTY CHECKER</title>
   <meta http-equiv="content-type" content="text/html" charset="UTF-8">
 </head>
 
@@ -15,14 +15,14 @@
 
 	if(isset($_SESSION['userid'])){
     if($_SESSION['usertype'] != '1'){
-      echo "<script>alert('You are not admin');window.location.href='../index.php'</script>";
+      echo "<script>alert('You are unauthorized.');window.location.href='../index.php'</script>";
       exit();
     }else{
       //do nothing
     }
 
 	}else{
-    echo "<script>alert('Log in first');window.location.href='../index.php'</script>";
+    echo "<script>alert('Please log in');window.location.href='./login.php'</script>";
     exit();
   }
 ?>

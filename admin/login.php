@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Test Title</title>
+  <title>OverMark - Log in</title>
   <meta http-equiv="content-type" content="text/html" charset="UTF-8">
 </head>
 <?php require_once('../checker/logincheck.php'); ?>

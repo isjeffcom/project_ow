@@ -3,7 +3,7 @@
 <?php include('../checker/logincheck.php'); ?>
 
   <head>
-    <title>Test Title</title>
+    <title>OverMark - Sign Up</title>
     <meta http-equiv="content-type" content="text/html" charset="UTF-8">
   </head>
 
@@ -28,11 +28,11 @@
 				<form action="../services/signupfunc.php" method="post">
 
 				    <a>Username：<input type="text" name="username" /></a>
-				    <a>[English and number only]</a><br>
+				    <a>[Alphabet or number only]</a><br>
 				    <br />
 
 				    <a>Password：<input type="password" name="password" /></a>
-				    <a>[English and number only]</a><br>
+				    <a>[Alphabet or number only]</a><br>
 				    <br/>
 
 				    <a>Password Confirm：<input type="password" name="confirm"/></a>

@@ -1,7 +1,7 @@
 <?php include('../checker/admincheck.php'); ?>
 
 <head>
-  <title>Test Title</title>
+  <title>OverMark - Admin</title>
   <meta http-equiv="content-type" content="text/html" charset="UTF-8">
 </head>
 
@@ -12,7 +12,7 @@
   $username = $_SESSION['username'];
 	?>
 
-  <h1>Content Management:</h1>
+  <h1 style='background-color: #fa9c1e; text-align:center; width:100%;'>OverMark Content Management</h1>
 
   <?php
   echo "<a href='../services/loginfunc.php?action=logout'>Log Out</a>";
@@ -21,37 +21,39 @@
 
 	<div class="columns_form">
 
-			<figure>
+    <form action="../services/updatefunc.php" method="post">
 
-				<form action="../services/updatefunc.php" method="post">
+        <h1>Verify Password</h1><br><br>
+        <a>Current Password<input type="password" name="orpassword"/></a>
 
-						<h1>Verify Password</h1><br><br>
-						<a>Current Password<input type="password" name="orpassword"/></a>
+        <h1>User Information</h1><br><br>
+          <a>Username: <?php echo htmlspecialchars($username) ?></a>
+          <br><br><br><br>
 
-						<h1>User Information</h1><br><br>
-					    <a>Username: <?php echo htmlspecialchars($username) ?></a>
-							<br><br><br><br>
+          <a>New Password<input type="password" name="newpassword"/></a>
+          <br><br><br><br>
 
-					    <a>New Password<input type="password" name="newpassword"/></a>
-							<br><br><br><br>
+          <input type='Submit' name='Submit' value='Change'/>
 
-              <input type='Submit' name='Submit' value='Change'/>
+          <h1>Hero Data</h1>
 
-              <h1>Hero Data</h1>
+          <!--a href='update.php'>One-click update from Overbuff.com</a-->
 
-              <!--a href='update.php'>One-click update from Overbuff.com</a-->
+          <br><br>
+      </form>
 
-              <br><br>
-          </form>
+			<figure style='display: flex; flex-wrap: wrap;'>
+
+
               <?php
               include('../services/connect.php');
               $sql = "SELECT * FROM py";
               $sqlrun = mysqli_query($link,$sql);
               $rownum = mysqli_num_rows($sqlrun);
               while ($row = mysqli_fetch_array($sqlrun)){
-                echo "<form action='../services/updatefunc.php' method='post' enctype='multipart/form-data'>";
+                echo "<form action='../services/updatefunc.php' style='margin-left:20px; background-color:#fafafa;border-style: solid; border-color: #777777;' method='post' enctype='multipart/form-data'>";
                 echo "<div style='display:none'><a>Id:</a><input type='text' name='hId' value='".$row[0]."'/></div><br>";
-                echo "<div><a>Name:</a><input type='text' name='hName' value='".$row[1]."'/><br>";
+                echo "<div style='padding: 10px;'><a>Name:</a><input type='text' name='hName' value='".$row[1]."'/><br>";
                 echo "<a>Popularity:</a><input type='text' name='hPopularity' value='".$row[3]."'/><br>";
                 echo "<a>Picked:</a><input type='text' name='hPicked' value='".$row[4]."'/><br>";
                 echo "<a>Win Rate:</a><input type='text' name='hWR' value='".$row[5]."'/><br>";
