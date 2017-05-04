@@ -332,6 +332,15 @@ canvas#radarChart{
 /*Responsive rebuild for mobile page. Screen level @x2*/
 @media screen and (max-width:1000px){
 
+  /*Detail page graphic chart*/
+  canvas#comChart{
+    display:none;
+  }
+
+  canvas#radarChart{
+    display:none;
+  }
+
   body{
     background-image: url(../img/m_bg.jpg);
     background-size: 320%;
